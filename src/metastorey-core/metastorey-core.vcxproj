@@ -10,6 +10,18 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileSystemNode.h" />
+    <ClInclude Include="FileSystemRepository.h" />
+    <ClInclude Include="IRepository.h" />
+    <ClInclude Include="Node.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileSystemNode.cpp" />
+    <ClCompile Include="FileSystemRepository.cpp" />
+    <ClCompile Include="IRepository.cpp" />
+    <ClCompile Include="Node.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{945A1207-2B56-44EF-A1EA-8AB5A7DF73A1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
