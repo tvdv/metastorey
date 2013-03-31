@@ -7,7 +7,8 @@ using namespace boost::filesystem;
 using namespace std;
 
 FileSystemRepository::FileSystemRepository(FileSystemRepositoryConfig const & config)
-	: m_Config(config)
+	: m_Config(config),
+	 m_Handler(config.GetHandler())
 {
 }
 
@@ -24,7 +25,7 @@ std::vector<std::shared_ptr<Node>> FileSystemRepository::GetNodes()
 	std::vector<std::shared_ptr<Node>> nodes;
 
 	auto paths=m_Config.GetPaths();
-	std::for_each(begin(paths),end(paths),[&] (std::wstring & path)
+	std::for_each(begin(paths),end(paths),[&] (str & path)
 	{
 		if (!GetFileSystemNodes(path,nodes))
 		{
@@ -39,7 +40,7 @@ std::vector<std::shared_ptr<Node>> FileSystemRepository::GetNodes()
 
 
 
-bool FileSystemRepository::GetFileSystemNodes(std::wstring path,std::vector<std::shared_ptr<Node>> &list)
+bool FileSystemRepository::GetFileSystemNodes(str path,std::vector<std::shared_ptr<Node>> &list)
 {
 	//check if path exists
 	if (!exists(path))
@@ -81,8 +82,15 @@ bool FileSystemRepository::GetFileSystemNodes(std::wstring path,std::vector<std:
 	return true;
 }
 
-shared_ptr<Node> FileSystemRepository::CreateNode(wstring filePath)
+shared_ptr<Node> FileSystemRepository::CreateNode(str filePath)
 {
-	//TODO: implement using various 'filters'/'handlers' that manage different file formats/storage mechanisns to determine if the file is data or metadata
+	if (m_Handler->IsFileValidNode(filePath) != IFileFormatHandler::Yes)
+	{
+		//ignore this file
+		return shared_ptr<Node>(NULL);
+	}
+
+
+	//TODO: implement using a chain of IFileFormatHandlers that manage different file formats/storage mechanisns to determine if the file is data or metadata
 	return shared_ptr<Node>(NULL);
 }

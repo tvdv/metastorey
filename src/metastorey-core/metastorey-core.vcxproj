@@ -11,15 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="config.h" />
     <ClInclude Include="FileSystemNode.h" />
     <ClInclude Include="FileSystemRepository.h" />
+    <ClInclude Include="IFileFormatHandler.h" />
     <ClInclude Include="IRepository.h" />
+    <ClInclude Include="MP3Handler.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileSystemNode.cpp" />
     <ClCompile Include="FileSystemRepository.cpp" />
+    <ClCompile Include="IFileFormatHandler.cpp" />
     <ClCompile Include="IRepository.cpp" />
+    <ClCompile Include="MP3Handler.cpp" />
     <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

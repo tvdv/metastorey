@@ -1,6 +1,7 @@
 #pragma once
+#include "config.h"
 #include "IRepository.h"
-
+#include "IFileFormatHandler.h"
 class FileSystemRepository :
 	public IRepository
 {
@@ -8,9 +9,12 @@ public:
 	class FileSystemRepositoryConfig
 	{
 	public:
-		std::vector<std::wstring> GetPaths() { return m_Paths;}
+		std::vector<str> GetPaths() const { return m_Paths;}
+		std::shared_ptr<IFileFormatHandler> GetHandler() const  { return m_Handler;}
 
-		std::vector<std::wstring> m_Paths;
+		std::vector<str> m_Paths;
+
+		std::shared_ptr<IFileFormatHandler> m_Handler;
 	};
 	
 	FileSystemRepository(FileSystemRepositoryConfig const & config);
@@ -21,9 +25,12 @@ public:
 private:
 
 	FileSystemRepository(void);
-	bool GetFileSystemNodes(std::wstring path,std::vector<std::shared_ptr<Node>> &list);
-	std::shared_ptr<Node> CreateNode(std::wstring filePath);
+	bool GetFileSystemNodes(str path,std::vector<std::shared_ptr<Node>> &list);
+	std::shared_ptr<Node> CreateNode(str filePath);
 	FileSystemRepositoryConfig m_Config;
+
+
+	std::shared_ptr<IFileFormatHandler> m_Handler; //most likely to be an IFileFormatHandler that internally has a chain of them, to support multiple formats
 
 };
 
