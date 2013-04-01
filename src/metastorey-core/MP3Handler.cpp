@@ -2,6 +2,7 @@
 #include <boost/algorithm/string.hpp>
 #include "MP3Handler.h"
 
+namespace MetaStorey {
 
 MP3Handler::MP3Handler(void)
 {
@@ -28,4 +29,6 @@ MP3Handler::ValidReturnValue MP3Handler::IsFileValidNode(str path)
 	}
 
 	return DeferToNextHandler;
+}
+
 }

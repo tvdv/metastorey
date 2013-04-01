@@ -2,6 +2,9 @@
 #include "config.h"
 #include "IRepository.h"
 #include "IFileFormatHandler.h"
+
+namespace MetaStorey {
+
 class FileSystemRepository :
 	public IRepository
 {
@@ -34,3 +37,5 @@ private:
 
 };
 
+
+}

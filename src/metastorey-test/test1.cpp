@@ -3,6 +3,8 @@
 #include "FileSystemRepository.h"
 #include "MP3Handler.h"
 
+using namespace MetaStorey;
+
 TEST(BASIC, TEST) {
 
 	FileSystemRepository::FileSystemRepositoryConfig config;

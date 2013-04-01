@@ -1,6 +1,7 @@
 #pragma once
 #include "config.h"
 
+namespace MetaStorey {
 
 class IFileFormatHandler
 {
@@ -25,3 +26,5 @@ public:
 
 
 };
+
+}

@@ -2,6 +2,8 @@
 #include "IFileFormatHandler.h"
 
 
+namespace MetaStorey {
+
 IFileFormatHandler::IFileFormatHandler(void)
 {
 }
@@ -22,4 +24,6 @@ str IFileFormatHandler::GetFileExtesnion(str path)
 	{
 		return path.substr(p+1);
 	}
+}
+
 }

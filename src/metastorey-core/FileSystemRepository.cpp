@@ -6,6 +6,8 @@
 using namespace boost::filesystem;
 using namespace std;
 
+namespace MetaStorey {
+
 FileSystemRepository::FileSystemRepository(FileSystemRepositoryConfig const & config)
 	: m_Config(config),
 	 m_Handler(config.GetHandler())
@@ -93,4 +95,6 @@ shared_ptr<Node> FileSystemRepository::CreateNode(str filePath)
 
 	//TODO: implement
 	return shared_ptr<Node>(NULL);
+}
+
 }

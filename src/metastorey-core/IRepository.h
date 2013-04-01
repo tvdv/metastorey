@@ -3,6 +3,9 @@
 #include <memory>
 #include "Node.h"
 
+
+namespace MetaStorey {
+
 class IRepository
 {
 public:
@@ -14,3 +17,5 @@ public:
 	//TODO: Add method for creating nodes
 };
 
+
+}

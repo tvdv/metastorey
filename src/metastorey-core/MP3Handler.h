@@ -1,5 +1,8 @@
 #pragma once
 #include "ifileformathandler.h"
+
+namespace MetaStorey {
+
 class MP3Handler :
 	public IFileFormatHandler
 {
@@ -11,3 +14,5 @@ public:
 	virtual ValidReturnValue IsFileValidNode(str path);
 };
 
+
+}
