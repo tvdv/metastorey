@@ -20,7 +20,7 @@ public:
 		//  if, for example, meta data is stored in a file, then that file should return No
 		virtual ValidReturnValue IsFileValidNode(str path)=0;
 
-		//helper function, returns the extension, with the ".". Or an empty string if there is extension
+		//helper function, returns the extension (no "."). Or an empty string if there is extension
 		static str GetFileExtesnion(str path);
 
 

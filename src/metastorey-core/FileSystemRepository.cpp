@@ -91,6 +91,6 @@ shared_ptr<Node> FileSystemRepository::CreateNode(str filePath)
 	}
 
 
-	//TODO: implement using a chain of IFileFormatHandlers that manage different file formats/storage mechanisns to determine if the file is data or metadata
+	//TODO: implement
 	return shared_ptr<Node>(NULL);
 }

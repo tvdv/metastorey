@@ -22,7 +22,7 @@ MP3Handler::ValidReturnValue MP3Handler::IsFileValidNode(str path)
 		return DeferToNextHandler;
 	}
 
-	if (ext.compare(L".MP3")==0)
+	if (ext.compare(L"MP3")==0)
 	{
 		return Yes;
 	}

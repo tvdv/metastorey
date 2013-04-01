@@ -1,6 +1,15 @@
 #pragma once
 #include "IFileFormatHandler.h"
 
+
+IFileFormatHandler::IFileFormatHandler(void)
+{
+}
+
+IFileFormatHandler::~IFileFormatHandler(void)
+{
+}
+
 str IFileFormatHandler::GetFileExtesnion(str path)
 {
 	int p=path.rfind('.');
