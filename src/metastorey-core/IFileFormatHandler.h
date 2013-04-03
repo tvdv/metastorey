@@ -1,5 +1,7 @@
 #pragma once
+#include <memory>
 #include "config.h"
+#include "Node.h"
 
 namespace MetaStorey {
 
@@ -24,6 +26,8 @@ public:
 		//helper function, returns the extension (no "."). Or an empty string if there is extension
 		static str GetFileExtesnion(str path);
 
+
+		virtual std::shared_ptr<Node> CreateNode(str path)=0;
 
 };
 

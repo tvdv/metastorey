@@ -86,15 +86,10 @@ bool FileSystemRepository::GetFileSystemNodes(str path,std::vector<std::shared_p
 
 shared_ptr<Node> FileSystemRepository::CreateNode(str filePath)
 {
-	if (m_Handler->IsFileValidNode(filePath) != IFileFormatHandler::Yes)
-	{
-		//ignore this file
-		return shared_ptr<Node>(NULL);
-	}
+	shared_ptr<Node> ptr=m_Handler->CreateNode(filePath); //may return a shared_ptr to NULL if the device should not be a node
 
-
-	//TODO: implement
-	return shared_ptr<Node>(NULL);
+	
+	return ptr; 
 }
 
 }

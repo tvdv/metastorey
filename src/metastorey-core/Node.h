@@ -1,6 +1,7 @@
 #pragma once
-
 #include <string>
+#include <memory>
+#include "config.h"
 
 namespace MetaStorey {
 
@@ -8,14 +9,19 @@ namespace MetaStorey {
 class Node
 {
 public:
-	Node(void);
+	
 	virtual ~Node(void);
 
-	std::string GetNodeId();
+	str GetNodeId();
+
+	virtual std::shared_ptr<std::istream> GetMetaData()=0;
+
+protected:
+	Node(str nodeId);
 private:
+	Node(void);
 
-
-	std::string m_NodeId;
+	str m_NodeId;
 
 };
 

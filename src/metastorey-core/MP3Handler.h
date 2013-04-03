@@ -12,6 +12,8 @@ public:
 
 
 	virtual ValidReturnValue IsFileValidNode(str path);
+
+	virtual std::shared_ptr<Node> CreateNode(str path);
 };
 
 
